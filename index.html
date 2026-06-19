@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AA Garage Door Service | Phoenix, Arizona</title>
+  <meta name="description" content="Fast, reliable garage door repair and installation in Phoenix, AZ. Available 24/7 for emergency service. Call now for same-day appointments." />
+
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #1a2e5a;
+      --navy2:  #0f1e3d;
+      --orange: #e8601c;
+      --orange2:#c9501a;
+      --white:  #ffffff;
+      --gray-bg:#f4f5f7;
+      --gray-light: #e8eaed;
+      --text:   #2d3748;
+      --muted:  #64748b;
+      --gold:   #f5a623;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ─── Utility ─── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: 6px; font-size: 1rem;
+      font-weight: 700; cursor: pointer; border: none; transition: background .2s, transform .1s;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-orange {
+      background: var(--orange); color: var(--white);
+    }
+    .btn-orange:hover { background: var(--orange2); }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      border: 2px solid var(--white);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.1); }
+
+    .section-title {
+      font-size: 2rem; font-weight: 800; color: var(--navy); margin-bottom: 12px;
+    }
+    .section-sub {
+      color: var(--muted); font-size: 1.05rem; margin-bottom: 40px;
+    }
+    .tag {
+      display: inline-block; background: var(--orange); color: var(--white);
+      font-size: .75rem; font-weight: 700; padding: 4px 10px;
+      border-radius: 4px; text-transform: uppercase; letter-spacing: .05em;
+    }
+
+    /* ─── Top Bar ─── */
+    .topbar {
+      background: var(--navy2); color: var(--white);
+      padding: 9px 0; font-size: .875rem;
+    }
+    .topbar .container {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 6px;
+    }
+    .topbar a { color: var(--white); }
+    .topbar .phone-top {
+      font-size: 1rem; font-weight: 700; color: var(--orange);
+    }
+
+    /* ─── Nav ─── */
+    nav {
+      background: var(--navy); position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.3);
+    }
+    .nav-inner {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 20px; max-width: 1100px; margin: 0 auto;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .logo-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+    }
+    .logo-text { line-height: 1.1; }
+    .logo-text .aa { font-size: 1.6rem; font-weight: 900; color: var(--white); }
+    .logo-text .service {
+      font-size: .65rem; font-weight: 700; color: var(--orange);
+      text-transform: uppercase; letter-spacing: .1em;
+    }
+    .nav-phone {
+      display: flex; align-items: center; gap: 8px;
+    }
+    .nav-phone a {
+      background: var(--orange); color: var(--white);
+      font-size: 1.1rem; font-weight: 800;
+      padding: 10px 20px; border-radius: 6px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .nav-phone a:hover { background: var(--orange2); }
+
+    /* ─── Hero ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy2) 0%, var(--navy) 100%);
+      color: var(--white); padding: 70px 20px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero .container {
+      position: relative; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(232,96,28,.15); border: 1px solid rgba(232,96,28,.4);
+      color: var(--orange); font-size: .8rem; font-weight: 700;
+      padding: 5px 12px; border-radius: 20px; margin-bottom: 16px;
+      text-transform: uppercase; letter-spacing: .08em;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900;
+      line-height: 1.15; margin-bottom: 16px;
+    }
+    .hero h1 span { color: var(--orange); }
+    .hero p {
+      font-size: 1.05rem; color: rgba(255,255,255,.8);
+      margin-bottom: 28px; max-width: 480px;
+    }
+    .hero-cta {
+      display: flex; gap: 12px; flex-wrap: wrap;
+    }
+    .hero-cta .btn { font-size: 1.05rem; }
+    .hero-trust {
+      display: flex; gap: 20px; margin-top: 32px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: .875rem; color: rgba(255,255,255,.7);
+    }
+    .trust-item .icon { font-size: 1.1rem; }
+
+    /* Hero visual */
+    .hero-visual {
+      display: flex; flex-direction: column; align-items: center; gap: 16px;
+    }
+    .hero-card {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 12px; padding: 28px; text-align: center; width: 100%;
+    }
+    .garage-icon-large {
+      margin: 0 auto 16px;
+    }
+    .stars { color: var(--gold); font-size: 1.4rem; letter-spacing: 2px; }
+    .rating-text {
+      color: rgba(255,255,255,.9); font-size: .9rem; margin-top: 4px;
+    }
+    .rating-big {
+      font-size: 2rem; font-weight: 900; color: var(--white); margin-top: 8px;
+    }
+
+    /* ─── Trust Strip ─── */
+    .trust-strip {
+      background: var(--orange); color: var(--white);
+      padding: 18px 0;
+    }
+    .trust-strip .container {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 12px; text-align: center;
+    }
+    .trust-pill { font-weight: 700; font-size: .9rem; }
+    .trust-pill small { display: block; font-weight: 400; font-size: .75rem; opacity: .85; }
+
+    /* ─── Services ─── */
+    .services { padding: 72px 0; background: var(--white); }
+    .services .container { text-align: center; }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: left;
+    }
+    .service-card {
+      border: 1px solid var(--gray-light); border-radius: 10px;
+      padding: 28px; transition: box-shadow .2s, transform .2s;
+    }
+    .service-card:hover {
+      box-shadow: 0 8px 24px rgba(26,46,90,.1);
+      transform: translateY(-3px);
+    }
+    .service-icon {
+      width: 52px; height: 52px; background: rgba(232,96,28,.1);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; margin-bottom: 16px;
+    }
+    .service-card h3 {
+      font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 8px;
+    }
+    .service-card p { font-size: .9rem; color: var(--muted); }
+
+    /* ─── Why Us ─── */
+    .why-us { padding: 72px 0; background: var(--gray-bg); }
+    .why-us .container {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .why-list { display: flex; flex-direction: column; gap: 20px; margin-top: 16px; }
+    .why-item { display: flex; gap: 14px; }
+    .why-check {
+      width: 36px; height: 36px; background: var(--navy); color: var(--white);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: .9rem; flex-shrink: 0; margin-top: 2px;
+    }
+    .why-item h4 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .why-item p { font-size: .9rem; color: var(--muted); }
+
+    .why-stat-box {
+      background: var(--navy); color: var(--white);
+      border-radius: 12px; padding: 36px; text-align: center;
+    }
+    .stats-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 20px;
+    }
+    .stat { padding: 20px; background: rgba(255,255,255,.07); border-radius: 8px; }
+    .stat-num { font-size: 2rem; font-weight: 900; color: var(--orange); }
+    .stat-label { font-size: .8rem; color: rgba(255,255,255,.7); margin-top: 2px; }
+    .why-stat-box h3 { font-size: 1.1rem; font-weight: 700; }
+
+    /* ─── Testimonials ─── */
+    .testimonials { padding: 72px 0; background: var(--white); }
+    .testimonials .container { text-align: center; }
+    .reviews-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: left;
+    }
+    .review-card {
+      background: var(--gray-bg); border-radius: 10px; padding: 24px;
+    }
+    .review-stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 10px; }
+    .review-text { font-size: .9rem; color: var(--text); margin-bottom: 14px; line-height: 1.6; }
+    .reviewer { display: flex; align-items: center; gap: 10px; }
+    .reviewer-avatar {
+      width: 36px; height: 36px; background: var(--navy);
+      color: var(--white); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .9rem; font-weight: 700;
+    }
+    .reviewer-name { font-size: .875rem; font-weight: 700; color: var(--navy); }
+    .reviewer-date { font-size: .75rem; color: var(--muted); }
+
+    /* ─── CTA Banner ─── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--navy2), var(--navy));
+      color: var(--white); padding: 64px 20px; text-align: center;
+    }
+    .cta-banner h2 { font-size: 2rem; font-weight: 900; margin-bottom: 10px; }
+    .cta-banner p { color: rgba(255,255,255,.75); margin-bottom: 28px; font-size: 1.05rem; }
+    .cta-phone-big {
+      font-size: 2.2rem; font-weight: 900; color: var(--orange);
+      display: inline-block; margin-bottom: 24px;
+    }
+    .cta-banner .btn { font-size: 1.15rem; padding: 16px 36px; }
+
+    /* ─── Footer ─── */
+    footer {
+      background: var(--navy2); color: rgba(255,255,255,.7);
+      padding: 40px 0 24px;
+    }
+    .footer-inner {
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 32px;
+    }
+    .footer-brand p { font-size: .875rem; margin-top: 12px; max-width: 280px; }
+    .footer-col h4 {
+      color: var(--white); font-size: .875rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col li { font-size: .875rem; }
+    .footer-col a:hover { color: var(--orange); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.1); padding-top: 20px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: .8rem; flex-wrap: wrap; gap: 8px;
+    }
+
+    /* ─── Mobile ─── */
+    @media (max-width: 768px) {
+      .hero .container { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .trust-strip .container { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: 1fr; }
+      .why-us .container { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .nav-phone a span { display: none; }
+      .section-title { font-size: 1.6rem; }
+    }
+    @media (max-width: 480px) {
+      .trust-strip .container { grid-template-columns: 1fr 1fr; }
+      .hero h1 { font-size: 1.6rem; }
+      .cta-phone-big { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="container">
+      <span>📍 Serving Phoenix, Scottsdale, Tempe & surrounding areas</span>
+      <a class="phone-top" href="tel:+16025550100">📞 (602) 555-0100</a>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">
+        <!-- Garage Door SVG Icon -->
+        <svg class="logo-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="40" height="40" rx="5" fill="#1a2e5a" stroke="#e8601c" stroke-width="2.5"/>
+          <rect x="6" y="10" width="32" height="4" rx="1.5" fill="rgba(255,255,255,0.6)"/>
+          <rect x="6" y="17" width="32" height="4" rx="1.5" fill="rgba(255,255,255,0.6)"/>
+          <rect x="6" y="24" width="32" height="4" rx="1.5" fill="rgba(255,255,255,0.6)"/>
+          <rect x="6" y="31" width="32" height="4" rx="1.5" fill="rgba(255,255,255,0.6)"/>
+          <circle cx="14" cy="7" r="2" fill="#e8601c"/>
+          <circle cx="30" cy="7" r="2" fill="#e8601c"/>
+        </svg>
+        <div class="logo-text">
+          <div class="aa">AA</div>
+          <div class="service">Garage Door Service</div>
+        </div>
+      </div>
+      <div class="nav-phone">
+        <a href="tel:+16025550100">
+          📞 <span>(602) 555-0100</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">⚡ 24/7 Emergency Service Available</div>
+        <h1>Phoenix's Most Trusted<br /><span>Garage Door Repair</span></h1>
+        <p>Same-day service. Upfront pricing. 100% satisfaction guaranteed. We fix all brands and models — fast.</p>
+        <div class="hero-cta">
+          <a class="btn btn-orange" href="tel:+16025550100">📞 Call Now — (602) 555-0100</a>
+          <a class="btn btn-outline" href="#services">Our Services</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item"><span class="icon">✅</span> Licensed & Insured</div>
+          <div class="trust-item"><span class="icon">⭐</span> 4.9/5 on Google</div>
+          <div class="trust-item"><span class="icon">🛠</span> 10-Year Warranty</div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card">
+          <svg class="garage-icon-large" width="120" height="100" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Garage door illustration -->
+            <rect x="5" y="5" width="110" height="90" rx="6" fill="#0f1e3d" stroke="#e8601c" stroke-width="3"/>
+            <rect x="15" y="18" width="90" height="10" rx="2" fill="rgba(255,255,255,0.25)"/>
+            <rect x="15" y="32" width="90" height="10" rx="2" fill="rgba(255,255,255,0.25)"/>
+            <rect x="15" y="46" width="90" height="10" rx="2" fill="rgba(255,255,255,0.25)"/>
+            <rect x="15" y="60" width="90" height="10" rx="2" fill="rgba(255,255,255,0.25)"/>
+            <rect x="15" y="74" width="90" height="10" rx="2" fill="rgba(255,255,255,0.25)"/>
+            <circle cx="30" cy="10" r="4" fill="#e8601c"/>
+            <circle cx="90" cy="10" r="4" fill="#e8601c"/>
+          </svg>
+          <div class="stars">★★★★★</div>
+          <div class="rating-text">Over 2,400 five-star reviews</div>
+          <div class="rating-big">4.9 / 5.0</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <div class="trust-strip">
+    <div class="container">
+      <div class="trust-pill">⚡ Same-Day Service <small>Book by noon, done today</small></div>
+      <div class="trust-pill">🕐 24/7 Emergency <small>We never close</small></div>
+      <div class="trust-pill">💰 Free Estimate <small>No obligation</small></div>
+      <div class="trust-pill">🛡 10-Year Warranty <small>Parts & labor</small></div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <span class="tag">What We Do</span>
+      <h2 class="section-title" style="margin-top:12px">Garage Door Services in Phoenix</h2>
+      <p class="section-sub">From broken springs to full door replacements — we handle it all.</p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Garage Door Repair</h3>
+          <p>Fast diagnosis and repair of all door problems — springs, cables, rollers, panels, and more. Most repairs done in one visit.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🌀</div>
+          <h3>Spring Replacement</h3>
+          <p>Broken torsion or extension springs? We carry all sizes in stock and replace them safely, same day.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
+          <h3>New Door Installation</h3>
+          <p>Wide selection of steel, wood, and carriage-house doors. We help you pick the right style and budget.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📡</div>
+          <h3>Opener Repair & Install</h3>
+          <p>We service and install all major brands — LiftMaster, Chamberlain, Genie, and more. WiFi-enabled options available.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚨</div>
+          <h3>Emergency Service</h3>
+          <p>Stuck door at midnight? We respond 24/7 with no extra after-hours charges. Your security is our priority.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔍</div>
+          <h3>Tune-Up & Maintenance</h3>
+          <p>Annual tune-ups extend your door's life by years. We inspect, lubricate, and adjust everything — top to bottom.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section class="why-us" id="about">
+    <div class="container">
+      <div>
+        <span class="tag">Why Choose Us</span>
+        <h2 class="section-title" style="margin-top:12px">Phoenix Homeowners Trust AA Garage Door</h2>
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-check">✓</div>
+            <div>
+              <h4>No Hidden Fees</h4>
+              <p>We quote the full price before we start. What we say is what you pay.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check">✓</div>
+            <div>
+              <h4>Experienced Technicians</h4>
+              <p>All techs are background-checked, licensed, and trained on 50+ door brands.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check">✓</div>
+            <div>
+              <h4>Stocked Trucks</h4>
+              <p>We carry hundreds of parts on every truck so we can fix it the first time.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check">✓</div>
+            <div>
+              <h4>Family-Owned Since 2008</h4>
+              <p>We live here too. Our reputation depends on every single job we do.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-stat-box">
+        <h3>Trusted Across the Valley</h3>
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-num">15k+</div>
+            <div class="stat-label">Happy Customers</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">4.9⭐</div>
+            <div class="stat-label">Google Rating</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">16+</div>
+            <div class="stat-label">Years in Business</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">24/7</div>
+            <div class="stat-label">Always Available</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="reviews">
+    <div class="container">
+      <span class="tag">Reviews</span>
+      <h2 class="section-title" style="margin-top:12px">What Phoenix Homeowners Say</h2>
+      <p class="section-sub">Over 2,400 five-star reviews on Google.</p>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"My spring snapped at 7am. They were at my house by 9am and had it fixed by 10. Price was exactly what they quoted — no surprises. Highly recommend."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">JM</div>
+            <div>
+              <div class="reviewer-name">Jessica M.</div>
+              <div class="reviewer-date">Scottsdale, AZ • 2 weeks ago</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Called at 11pm when my door wouldn't close. Tech arrived within the hour, super professional. Fixed in 20 minutes. This is the only garage door company I'll ever call."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">RT</div>
+            <div>
+              <div class="reviewer-name">Robert T.</div>
+              <div class="reviewer-date">Phoenix, AZ • 1 month ago</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"They installed a beautiful new door and opener for us. Best price I found after 3 quotes, and the work was perfect. Cleaned up everything before they left too."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">SL</div>
+            <div>
+              <div class="reviewer-name">Sandra L.</div>
+              <div class="reviewer-date">Tempe, AZ • 3 months ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Door Broken? We'll Fix It Today.</h2>
+      <p>Same-day appointments available. Call us now or request a free estimate.</p>
+      <div>
+        <a class="cta-phone-big" href="tel:+16025550100">(602) 555-0100</a>
+      </div>
+      <a class="btn btn-orange" href="tel:+16025550100">📞 Call Now — It's Free</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="logo">
+            <svg width="36" height="36" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="40" height="40" rx="5" fill="#1a2e5a" stroke="#e8601c" stroke-width="2.5"/>
+              <rect x="6" y="10" width="32" height="4" rx="1.5" fill="rgba(255,255,255,0.6)"/>
+              <rect x="6" y="17" width="32" height="4" rx="1.5" fill="rgba(255,255,255,0.6)"/>
+              <rect x="6" y="24" width="32" height="4" rx="1.5" fill="rgba(255,255,255,0.6)"/>
+              <rect x="6" y="31" width="32" height="4" rx="1.5" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="14" cy="7" r="2" fill="#e8601c"/>
+              <circle cx="30" cy="7" r="2" fill="#e8601c"/>
+            </svg>
+            <div class="logo-text">
+              <div class="aa" style="color:white">AA</div>
+              <div class="service">Garage Door Service</div>
+            </div>
+          </div>
+          <p>Family-owned garage door repair and installation serving Phoenix, Scottsdale, Tempe, Mesa, and the entire Valley since 2008.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Door Repair</a></li>
+            <li><a href="#services">Spring Replacement</a></li>
+            <li><a href="#services">New Door Installation</a></li>
+            <li><a href="#services">Opener Repair</a></li>
+            <li><a href="#services">Emergency Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li>📞 <a href="tel:+16025550100">(602) 555-0100</a></li>
+            <li>📍 Phoenix, Arizona</li>
+            <li>🕐 24/7 Emergency</li>
+            <li>Mon–Sun: 7am – 10pm</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2024 AA Garage Door Service. All rights reserved.</span>
+        <span>Licensed · Bonded · Insured | ROC #123456</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
